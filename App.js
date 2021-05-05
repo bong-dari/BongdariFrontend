@@ -7,14 +7,22 @@
  */
 
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import Login from './src/components/member/Login';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>안령dd하dd세요</Text>
+    <SafeAreaView style={styles.container}>
+      <Login />
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+  },
+});
 
 export default App;
