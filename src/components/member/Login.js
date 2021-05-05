@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   socialContainer: {
     width: '100%',
-    height: '10%',
+    height: 40,
     marginTop: 15,
     padding: 10,
     flexDirection: 'row',
