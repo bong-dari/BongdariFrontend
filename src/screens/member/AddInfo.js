@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   topCircle: {
     position: 'absolute',
-    top: '17%',
+    top: '18%',
     left: '20%',
     width: 36,
     height: 36,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
       height: 4,
     },
     shadowRadius: 8,
-    elevation: 10,
+    elevation: 5,
   },
   viewContainer: {
     width: '100%',
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   comment: {
     marginTop: 40,
     color: '#999999',
+    fontSize: 18,
   },
   divisionLine: {
     width: '100%',
@@ -109,6 +110,7 @@ const styles = StyleSheet.create({
     borderColor: '#b8b8b8',
     borderWidth: 1,
     borderRadius: 5,
+    fontSize: 18,
   },
   buttonBox: {
     width: '100%',
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
+    fontSize: 18,
   },
 });
 
