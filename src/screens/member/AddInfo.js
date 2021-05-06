@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
+import { CommonButton } from '../../assets/globalStyles';
 
 const AddInfo = () => {
   return (
@@ -18,9 +12,7 @@ const AddInfo = () => {
         <Text style={styles.comment}>닉네임을 입력해 주세요!</Text>
         <View style={styles.divisionLine} />
         <TextInput placeholder="닉네임" style={styles.nickname} />
-        <TouchableOpacity style={styles.buttonBox}>
-          <Text style={styles.buttonText}>다음</Text>
-        </TouchableOpacity>
+        <CommonButton onPress={() => true} title="다음" />
       </View>
     </SafeAreaView>
   );
@@ -110,19 +102,6 @@ const styles = StyleSheet.create({
     borderColor: '#b8b8b8',
     borderWidth: 1,
     borderRadius: 5,
-    fontSize: 18,
-  },
-  buttonBox: {
-    width: '100%',
-    height: 50,
-    marginTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffb623',
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: '#fff',
     fontSize: 18,
   },
 });

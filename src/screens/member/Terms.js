@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-// import CommonButton from '../../assets/global';
+import { CommonButton } from '../../assets/globalStyles';
 
 const Terms = () => {
   return (
@@ -25,9 +19,7 @@ const Terms = () => {
           &#183; 선택항목에 대한 동의를 거부하는 경우에도 서비스 이용이
           가능합니다.
         </Text>
-        <TouchableOpacity style={styles.buttonBox}>
-          <Text style={styles.buttonText}>약관에 모두 동의</Text>
-        </TouchableOpacity>
+        <CommonButton onPress={() => true} title="약관에 모두 동의" />
         <View style={styles.checkListBox}>
           <Text style={styles.checkListItem}>
             &#40;필수&#41; 서비스 이용 약관
@@ -52,9 +44,7 @@ const Terms = () => {
           </Text>
           <CheckBox style={styles.checkbox} />
         </View>
-        <TouchableOpacity style={styles.buttonBox}>
-          <Text style={styles.buttonText}>완료</Text>
-        </TouchableOpacity>
+        <CommonButton onPress={() => true} title="완료" />
       </View>
     </SafeAreaView>
   );
@@ -155,19 +145,6 @@ const styles = StyleSheet.create({
   checkbox: {
     alignSelf: 'center',
     marginTop: 10,
-  },
-  buttonBox: {
-    width: '100%',
-    height: 50,
-    marginTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffb623',
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
   },
 });
 
