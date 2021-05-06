@@ -7,12 +7,10 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import AddInfo from './src/components/member/AddInfo';
-import Login from './src/components/member/Login';
+import Terms from './src/screens/member/Terms';
 
 const App = () => {
-  return <AddInfo />;
+  return <Terms />;
 };
 
 export default App;
