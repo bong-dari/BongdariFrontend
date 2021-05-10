@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Image,
+  TextInput,
 } from 'react-native';
 
-const Login = () => {
+const InstitutionLogin = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -16,30 +17,24 @@ const Login = () => {
       <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.appName}>Bongdari</Text>
-        <Text style={styles.comment}>먼저 로그인이 필요해요 : &#41;</Text>
-        <View style={styles.divisionContainer}>
-          <View style={styles.divisionLine} />
-          <Text style={styles.divisionText}>간편 로그인</Text>
-        </View>
-        <TouchableOpacity style={styles.socialContainer}>
-          <Image
-            source={require('../../assets/images/naverIcon.png')}
-            resizeMode="contain"
-            style={styles.socialIcon}
-          />
-          <Text style={styles.socialText}>네이버로 시작하기</Text>
+        <Text style={styles.comment}>로그인</Text>
+        <View style={styles.divisionLine} />
+        <TextInput
+          style={styles.loginInput}
+          placeholder="아이디"
+          placeholderTextColor="#ededed"
+        />
+        <TextInput
+          style={styles.loginInput}
+          placeholder="비밀번호"
+          placeholderTextColor="#ededed"
+        />
+        <TouchableOpacity style={styles.loginButton}>
+          <Text style={styles.loginText}>로그인</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.socialContainer}>
-          <Image
-            source={require('../../assets/images/kakaoIcon.png')}
-            resizeMode="contain"
-            style={styles.socialIcon}
-          />
-          <Text style={styles.socialText}>카카오로 시작하기</Text>
-        </TouchableOpacity>
-        <Text style={styles.questionComment}>
-          봉사 기관이신가요?&nbsp;
-          <Text style={styles.loginLink}>로그인</Text>
+        <Text style={styles.find}>아이디 찾기 &#47; 비밀번호 찾기</Text>
+        <Text>
+          계정이 없으신가요? <Text style={styles.register}>기관등록</Text>
         </Text>
       </View>
     </SafeAreaView>
@@ -128,62 +123,47 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   comment: {
-    color: '#b5b5b5',
-    fontSize: 16,
+    color: '#000000',
+    fontSize: 20,
     marginTop: 34,
-  },
-  divisionContainer: {
-    width: '100%',
-    height: 20,
-    position: 'relative',
-    marginTop: 10,
-    justifyContent: 'center',
   },
   divisionLine: {
     width: '100%',
     height: 1,
-    backgroundColor: '#929292',
+    marginTop: 10,
+    backgroundColor: '#ededed',
   },
-  divisionText: {
-    color: '#8c8c8c',
-    backgroundColor: '#fff',
-    textAlign: 'center',
-    position: 'absolute',
-    width: 80,
-    left: '50%',
-    top: '50%',
-    marginLeft: -40,
-    marginTop: -10,
-  },
-  socialContainer: {
+  loginInput: {
+    marginTop: 10,
     width: '100%',
     height: 40,
-    marginTop: 15,
-    padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderColor: '#ededed',
     borderWidth: 1,
     borderRadius: 5,
-    borderColor: '#b4b4b4',
-  },
-  socialIcon: {
-    width: 25,
-    height: 25,
-    position: 'absolute',
-    left: '5%',
-  },
-  socialText: {
     fontSize: 16,
-    color: '#878787',
   },
-  questionComment: {
-    marginTop: 18,
-    color: '#818181',
+  loginButton: {
+    marginVertical: 10,
+    width: '100%',
+    height: 40,
+    backgroundColor: '#ededed',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  loginLink: {
+  loginText: {
+    color: '#ffffff',
+    fontSize: 16,
+  },
+  find: {
+    fontSize: 14,
+    color: '#008489',
+  },
+  register: {
+    fontSize: 14,
+    color: '#008489',
     textDecorationLine: 'underline',
   },
 });
 
-export default Login;
+export default InstitutionLogin;
