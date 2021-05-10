@@ -2,21 +2,21 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { CommonButton } from '../../assets/globalStyles';
 
-const MemberAddInfo = () => {
+const InstitutionIdForm = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
       <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.appName}>Bongdari</Text>
-        <Text style={styles.comment}>닉네임을 입력해주세요!</Text>
+        <Text style={styles.comment}>아이디를 입력해주세요!</Text>
         <View style={styles.divisionLine} />
         <TextInput
-          placeholder="닉네임"
+          placeholder="아이디"
           placeholderTextColor="#848484"
           style={styles.nickname}
         />
-        <CommonButton onPress={() => true} title="다음" />
+        <CommonButton onPress={() => true} title="다음" bgColor="#0099CC" />
       </View>
     </SafeAreaView>
   );
@@ -109,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MemberAddInfo;
+export default InstitutionIdForm;
