@@ -37,10 +37,6 @@ const MemberLogin = () => {
           />
           <Text style={styles.socialText}>카카오로 시작하기</Text>
         </TouchableOpacity>
-        <Text style={styles.questionComment}>
-          봉사 기관이신가요?&nbsp;
-          <Text style={styles.loginLink}>로그인</Text>
-        </Text>
       </View>
     </SafeAreaView>
   );
