@@ -9,9 +9,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import MainTabStackScreen from './src/screens/bottom/MainTabStackScreen';
-import AddInfo from './src/screens/member/AddInfo';
-import Login from './src/screens/member/Login';
+import MainTabStackScreen from './src/screens/MainTabStackScreen';
 
 const App = () => {
   return (

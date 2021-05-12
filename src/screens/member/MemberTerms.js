@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { CommonButton } from '../../assets/globalStyles';
 
-const Terms = () => {
+const MemberTerms = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -148,4 +148,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Terms;
+export default MemberTerms;

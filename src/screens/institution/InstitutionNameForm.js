@@ -2,17 +2,21 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { CommonButton } from '../../assets/globalStyles';
 
-const AddInfo = () => {
+const InstitutionNameForm = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
       <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.appName}>Bongdari</Text>
-        <Text style={styles.comment}>닉네임을 입력해 주세요!</Text>
+        <Text style={styles.comment}>기관의 이름을 작성해주세요!</Text>
         <View style={styles.divisionLine} />
-        <TextInput placeholder="닉네임" style={styles.nickname} />
-        <CommonButton onPress={() => true} title="다음" />
+        <TextInput
+          placeholder="기관명"
+          placeholderTextColor="#848484"
+          style={styles.nickname}
+        />
+        <CommonButton onPress={() => true} title="다음" bgColor="#0099CC" />
       </View>
     </SafeAreaView>
   );
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
     right: '-5%',
     width: 76,
     height: 76,
-    backgroundColor: '#006492',
+    backgroundColor: '#004860',
     borderRadius: 50,
     shadowColor: '#000',
     shadowOpacity: 0.25,
@@ -98,7 +102,6 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 20,
     textAlign: 'center',
-    color: '#848484',
     borderColor: '#b8b8b8',
     borderWidth: 1,
     borderRadius: 5,
@@ -106,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddInfo;
+export default InstitutionNameForm;
