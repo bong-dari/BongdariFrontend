@@ -9,12 +9,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import MainTabStackScreen from './src/screens/MainTabStackScreen';
+import MainTabStackScreen from './src/screens/bottom/MainTabStackScreen';
 import AddInfo from './src/screens/member/AddInfo';
 import Login from './src/screens/member/Login';
 
 const App = () => {
-  // return <AddInfo />;
   return (
     <NavigationContainer>
       <StatusBar barStyle={'dark-content'} />

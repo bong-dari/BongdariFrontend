@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     right: '-5%',
     width: 76,
     height: 76,
-    backgroundColor: '#004860',
+    backgroundColor: '#006492',
     borderRadius: 50,
     shadowColor: '#000',
     shadowOpacity: 0.25,
