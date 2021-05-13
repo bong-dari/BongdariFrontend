@@ -2,8 +2,13 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { CommonButton } from '../../assets/globalStyles';
+import { useNavigation } from '@react-navigation/core';
 
-const MemberTerms = () => {
+const MemberTerms = ({ route }) => {
+  // const { navigate } = useNavigation();
+  // const onPress = ({ type }) => {
+  //   navigate(type);
+  // };
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -44,7 +49,7 @@ const MemberTerms = () => {
           </Text>
           <CheckBox style={styles.checkbox} />
         </View>
-        <CommonButton onPress={() => true} title="완료" />
+        <CommonButton title="완료" />
       </View>
     </SafeAreaView>
   );
