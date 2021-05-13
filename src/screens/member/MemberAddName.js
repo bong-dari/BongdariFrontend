@@ -3,27 +3,26 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { CommonButton } from '../../assets/globalStyles';
 
-const MemberAddInfo = () => {
+const MemberAddName = () => {
   const { navigate } = useNavigation();
   const onPress = ({ type }) => {
     navigate(type);
   };
-
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
       <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.appName}>Bongdari</Text>
-        <Text style={styles.comment}>닉네임을 입력해주세요!</Text>
+        <Text style={styles.comment}>이름을 입력해주세요!</Text>
         <View style={styles.divisionLine} />
         <TextInput
-          placeholder="닉네임"
+          placeholder="이름"
           placeholderTextColor="#848484"
           style={styles.nickname}
         />
         <CommonButton
-          onPress={() => onPress({ type: 'MemberTerms' })}
+          onPress={() => onPress({ type: 'MemberAddInfo' })}
           title="다음"
         />
       </View>
@@ -118,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MemberAddInfo;
+export default MemberAddName;

@@ -34,10 +34,10 @@ const UserTypeScreen = () => {
   return (
     <Container>
       <Text>먼저 로그인이 필요해요</Text>
-      <TypeButton onPress={() => onPress({ type: 'Login' })}>
+      <TypeButton onPress={() => onPress({ type: 'MemberLogin' })}>
         <Text>봉사자 로그인하러 가기</Text>
       </TypeButton>
-      <TypeButton onPress={() => onPress({ type: 'AddInfo' })}>
+      <TypeButton onPress={() => onPress({ type: 'InstitutionLogin' })}>
         <Text>봉사 기관 로그인하러 가기</Text>
       </TypeButton>
     </Container>

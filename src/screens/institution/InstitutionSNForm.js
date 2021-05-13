@@ -1,8 +1,13 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TextInput } from 'react-native';
 import { CommonButton } from '../../assets/globalStyles';
 
 const InstitutionSNForm = () => {
+  const { navigate } = useNavigation();
+  const onPress = ({ type }) => {
+    navigate(type);
+  };
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -18,7 +23,11 @@ const InstitutionSNForm = () => {
           placeholderTextColor="#848484"
           style={styles.nickname}
         />
-        <CommonButton onPress={() => true} title="다음" bgColor="#0099CC" />
+        <CommonButton
+          onPress={() => onPress({ type: 'InstitutionContactForm' })}
+          title="다음"
+          bgColor="#0099CC"
+        />
       </View>
     </SafeAreaView>
   );

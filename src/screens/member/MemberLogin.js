@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import {
   View,
@@ -9,6 +10,12 @@ import {
 } from 'react-native';
 
 const MemberLogin = () => {
+  const { navigate } = useNavigation();
+  // 누른 버튼이 네이버인지 카카오인지 Type으로 구분해서 라우팅 처리,
+  const onPress = ({ type }) => {
+    navigate(type);
+  };
+
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -27,7 +34,11 @@ const MemberLogin = () => {
             resizeMode="contain"
             style={styles.socialIcon}
           />
-          <Text style={styles.socialText}>네이버로 시작하기</Text>
+          <Text
+            style={styles.socialText}
+            onPress={() => onPress({ type: 'MemberAddInfo' })}>
+            네이버로 시작하기
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialContainer}>
           <Image
@@ -35,7 +46,11 @@ const MemberLogin = () => {
             resizeMode="contain"
             style={styles.socialIcon}
           />
-          <Text style={styles.socialText}>카카오로 시작하기</Text>
+          <Text
+            style={styles.socialText}
+            onPress={() => onPress({ type: 'MemberAddName' })}>
+            카카오로 시작하기
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

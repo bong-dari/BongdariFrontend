@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import {
   View,
@@ -10,6 +11,10 @@ import {
 } from 'react-native';
 
 const InstitutionLogin = () => {
+  const { navigate } = useNavigation();
+  const onPress = ({ type }) => {
+    navigate(type);
+  };
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
@@ -34,7 +39,12 @@ const InstitutionLogin = () => {
         </TouchableOpacity>
         <Text style={styles.find}>아이디 찾기 &#47; 비밀번호 찾기</Text>
         <Text>
-          계정이 없으신가요? <Text style={styles.register}>기관등록</Text>
+          계정이 없으신가요?{' '}
+          <Text
+            style={styles.register}
+            onPress={() => onPress({ type: 'InstitutionIdForm' })}>
+            기관등록
+          </Text>
         </Text>
       </View>
     </SafeAreaView>
