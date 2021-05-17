@@ -11,11 +11,9 @@ const MemberTerms = ({ route }) => {
   // };
   return (
     <SafeAreaView style={styles.wrapper}>
-      <View style={styles.topCircle} />
-      <View style={styles.bottomCircle} />
-      <Text style={styles.appName}>Bongdari</Text>
       <View style={styles.viewContainer}>
         <Text style={styles.comment}>추가 동의가 필요합니다.</Text>
+        <View style={styles.divisionLine} />
         <Text style={styles.description}>
           &#183; 전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며,
           개별적으로도 동의를 선택할 수 있습니다.
@@ -60,50 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     paddingHorizontal: 25,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#87a9b8',
-  },
-  topCircle: {
-    position: 'absolute',
-    top: '15%',
-    right: '20%',
-    width: 30,
-    height: 30,
-    backgroundColor: '#d9e1e2',
-    borderRadius: 50,
-    shadowColor: '#000',
-    shadowOpacity: 0.25,
-    shadowOffset: {
-      width: 4,
-      height: 4,
-    },
-    shadowRadius: 8,
-    elevation: 10,
-  },
-  bottomCircle: {
-    position: 'absolute',
-    bottom: '7%',
-    left: '-3%',
-    width: 63,
-    height: 63,
-    backgroundColor: '#2de2ac',
-    borderRadius: 50,
-    shadowColor: '#000',
-    shadowOpacity: 0.25,
-    shadowOffset: {
-      width: 4,
-      height: 4,
-    },
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  appName: {
-    color: '#ffffff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 7,
-    alignSelf: 'flex-start',
   },
   viewContainer: {
     width: '100%',
@@ -111,25 +66,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
   },
   comment: {
     width: 220,
-    paddingBottom: 12,
-    color: '#6c6c6c',
-    fontSize: 20,
+    color: '#222222',
+    fontSize: 18,
     alignSelf: 'flex-start',
-    borderWidth: 1,
-    borderColor: '#ffffff',
-    borderBottomColor: '#c0c0c0',
+  },
+  divisionLine: {
+    width: '100%',
+    height: 1,
+    marginTop: 20,
+    backgroundColor: '#c4c4c4',
   },
   description: {
     marginTop: 10,
