@@ -11,9 +11,10 @@ const MemberTerms = ({ route }) => {
   // };
   return (
     <SafeAreaView style={styles.wrapper}>
+      <View style={styles.topCircle} />
+      <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.comment}>추가 동의가 필요합니다.</Text>
-        <View style={styles.divisionLine} />
         <Text style={styles.description}>
           &#183; 전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며,
           개별적으로도 동의를 선택할 수 있습니다.
@@ -59,6 +60,42 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 25,
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#87a9b8',
+  },
+  topCircle: {
+    position: 'absolute',
+    top: '13%',
+    right: '20%',
+    width: 25,
+    height: 25,
+    backgroundColor: '#d9e1e2',
+    borderRadius: 50,
+    shadowColor: '#000',
+    shadowOpacity: 0.25,
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  bottomCircle: {
+    position: 'absolute',
+    bottom: '11%',
+    left: '-2%',
+    width: 44,
+    height: 44,
+    backgroundColor: '#2de2ac',
+    borderRadius: 50,
+    shadowColor: '#000',
+    shadowOpacity: 0.25,
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    shadowRadius: 8,
+    elevation: 4,
   },
   viewContainer: {
     width: '100%',
@@ -66,19 +103,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
     shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
   comment: {
     width: 220,
-    color: '#222222',
-    fontSize: 18,
+    color: '#6c6c6c',
+    fontSize: 20,
     alignSelf: 'flex-start',
-  },
-  divisionLine: {
-    width: '100%',
-    height: 1,
-    marginTop: 20,
-    backgroundColor: '#c4c4c4',
+    paddingBottom: 10,
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderBottomColor: '#c4c4c4',
   },
   description: {
     marginTop: 10,
