@@ -6,7 +6,7 @@ const Board1 = () => {
   const { navigate } = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={() => navigate('Board2')}>Board1</Text>
+      <Text>Board1</Text>
     </SafeAreaView>
   );
 };
@@ -14,8 +14,10 @@ const Board1 = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 25,
   },
 });
 
