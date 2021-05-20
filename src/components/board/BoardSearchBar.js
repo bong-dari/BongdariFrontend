@@ -36,6 +36,8 @@ const SearchInput = styled.TextInput`
 `;
 
 const SearchIcon = styled.Image`
+  position: absolute;
+  right: 10;
   width: 18px;
   height: 18px;
 `;

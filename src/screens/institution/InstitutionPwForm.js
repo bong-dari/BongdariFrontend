@@ -10,7 +10,6 @@ const InstitutionPwForm = () => {
   };
   return (
     <SafeAreaView style={styles.wrapper}>
-      <Text style={styles.appName}>Bongdari</Text>
       <Text style={styles.comment}>비밀번호를 입력해주세요!</Text>
       <View style={styles.divisionLine} />
       <TextInput

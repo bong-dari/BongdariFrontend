@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import BoardSearchBar from './BoardSearchBar';
 
 const Container = styled.SafeAreaView`
-  margin-top: 16px;
+  margin-top: 20px;
   padding: 0 20px;
 `;
 
@@ -11,7 +11,7 @@ const TabWrapper = styled.View`
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin-top: 16px;
+  margin-top: 15px;
   border: 1px solid #ededed;
 `;
 
@@ -21,8 +21,10 @@ const TabButton = styled.TouchableOpacity`
   width: 33.3%;
   height: 40px;
   padding: 0 10px;
-  border: 1px solid #ededed;
   background-color: ${props => (props.isFocused ? '#ededed' : 'transparent')};
+  /* &:nth-child(2) {
+    border: 
+  } */
 `;
 
 const TabText = styled.Text`

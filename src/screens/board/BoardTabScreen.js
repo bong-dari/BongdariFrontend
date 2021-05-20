@@ -14,7 +14,7 @@ const BoardTabScreen = () => {
       tabBar={props => <BoardTabBar {...props} />}
       tabBarOptions={{ labelStyle: { fontSize: 12 } }}>
       <Tab.Screen
-        name="옆 동네 봉사"
+        name="옆동네 봉사"
         component={Board1}
         // options={{ tabBarLabel: '타 기관 봉사 알리기' }}
       />
