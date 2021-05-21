@@ -63,13 +63,6 @@ const BoardServicePeriod = () => {
     navigate(type);
   };
 
-  //   renderArrow = (direction) => direction === "left" ? (
-  //     <AntDesign name="left" size={20} color="#50cebb" />
-  //   ) : (
-  //     <AntDesign name="right" size={20} color="#50cebb" />
-  //   )
-  // };
-
   return (
     <Container>
       <Text style={{ fontSize: 18 }}>
@@ -171,16 +164,6 @@ const BoardServicePeriod = () => {
             },
           },
         }}
-        style={
-          {
-            // width: 375,
-            // borderWidth: 1,
-            // borderColor: 'gray',
-          }
-        }
-        // theme={{
-        //   calendarBackground: '#222',
-        // }}
         // Callback which gets executed when visible months change in scroll view. Default = undefined
         onVisibleMonthsChange={months => {
           console.log('now these months are visible', months);
@@ -206,51 +189,3 @@ const BoardServicePeriod = () => {
 };
 
 export default BoardServicePeriod;
-
-// 인터넷에서 검색해옴
-
-// <CalendarList
-// markedDates={{
-// [this.props.startDate]:
-//  { selected: true, selectedColor: '#5cb85c' },
-// [this.props.endDate]:
-// { selected: true, selectedColor: '#d9534f' }
-// }}
-// Current={moment(new Date()).format('YYYY-MM-DD')}
-// pastScrollRange={100}
-// futureScrollRange={100}
-// pagingEnabled
-// firstDay={1}
-// onDayPress={this.props.onDayPress}
-
-// theme={{
-// 'stylesheet.calendar.header': {
-// dayHeader: {
-// marginTop: 2,
-// marginBottom: 7,
-// width: 30,
-// textAlign: 'center',
-// fontSize: 14,
-// color: "#2d4150",
-// },
-// todayText: {
-// fontSize: 18,
-// color: "red",
-// marginTop: 0,
-// }}
-// dayTextColor: "#2d4150",
-// textDayFontSize: 12,
-// textDayHeaderFontSize: 14,
-// textMonthFontSize: 15,
-// textMonthFontWeight: 'bold',
-// monthTextColor: "#2d4150",
-// backgroundColor: "#FFFFFF",
-// calendarBackground: "#FFFFFF",
-// textSectionTitleColor: "#000",
-// selectedDayBackgroundColor: "#0073B7",
-// selectedDayTextColor: "#FFF",
-// textDisabledColor: "#d9e1e8",
-// arrowColor: "orange",
-// }}
-// style={{ borderBottomWidth: 1, borderBottomColor: '#000' }}/>
-// </View>
