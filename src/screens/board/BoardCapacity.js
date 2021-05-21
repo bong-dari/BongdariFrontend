@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components';
@@ -26,6 +27,10 @@ const Input = styled.TextInput`
 `;
 
 const BoardCapacity = () => {
+  const { navigate } = useNavigation();
+  const onPress = ({ type }) => {
+    navigate(type);
+  };
   return (
     <Container>
       <Text style={{ fontSize: 18 }}>
@@ -33,7 +38,10 @@ const BoardCapacity = () => {
       </Text>
       <Border />
       <Input placeholder="인원수" placeholderTextColor="#c4c4c4" />
-      <CommonButton title="다음" />
+      <CommonButton
+        title="다음"
+        onPress={() => onPress({ type: 'BoardContact' })}
+      />
     </Container>
   );
 };
