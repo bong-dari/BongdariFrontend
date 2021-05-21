@@ -8,7 +8,6 @@ import MapScreen from './MapScreen';
 import MyPageScreen from './MyPageScreen';
 import styled from 'styled-components';
 import UserTypeScreen from '../member/UserTypeScreen';
-import { useNavigation } from '@react-navigation/core';
 import InstitutionLogin from '../institution/InstitutionLogin';
 import InstitutionAddressForm from '../institution/InstitutionAddressForm';
 import InstitutionContactForm from '../institution/InstitutionContactForm';
@@ -20,6 +19,10 @@ import MemberLogin from '../member/MemberLogin';
 import MemberAddInfo from '../member/MemberAddInfo';
 import MemberTerms from '../member/MemberTerms';
 import MemberAddName from '../member/MemberAddName';
+import BoardCapacity from '../board/BoardCapacity';
+import GobackButton from '../common/GobackButton';
+import BoardContact from '../board/BoardContact';
+import BoardServicePeriod from '../board/BoardServicePeriod';
 
 const MainTab = createBottomTabNavigator();
 const SearchStack = createStackNavigator();
@@ -28,12 +31,44 @@ const AreaStack = createStackNavigator();
 const MapStack = createStackNavigator();
 const MyPageStack = createStackNavigator();
 const UserTypeStack = createStackNavigator();
+const UserBoardStack = createStackNavigator();
 
 const BottomTabImage = styled.Image`
   width: 25px;
   height: 25px;
 `;
 
+// 유저 간 커뮤니티 게시판
+const UserBoardStackScreen = () => {
+  return (
+    <UserBoardStack.Navigator>
+      <UserBoardStack.Screen
+        name="BoardCapacity"
+        component={BoardCapacity}
+        options={{
+          title: '',
+          headerLeft: () => <GobackButton />,
+        }}
+      />
+      <UserBoardStack.Screen
+        name="BoardContact"
+        component={BoardContact}
+        options={{
+          title: '',
+          headerLeft: () => <GobackButton />,
+        }}
+      />
+      <UserBoardStack.Screen
+        name="BoardServicePeriod"
+        component={BoardServicePeriod}
+        options={{
+          title: '',
+          headerLeft: () => <GobackButton />,
+        }}
+      />
+    </UserBoardStack.Navigator>
+  );
+};
 // 봉사자, 봉사기관 userType 선택 view
 const UserStackScreen = () => {
   return (
@@ -217,7 +252,8 @@ const BottomTabNavigation = () => {
 const MainTabStackScreen = () => {
   // 테스트용 상태
   const [isLogined, setIsLogined] = useState(true);
-  return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
+  // return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
+  return <UserBoardStackScreen />;
 };
 
 export default MainTabStackScreen;
