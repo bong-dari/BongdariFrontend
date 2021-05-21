@@ -21,6 +21,8 @@ import MemberTerms from '../member/MemberTerms';
 import MemberAddName from '../member/MemberAddName';
 import BoardCapacity from '../board/BoardCapacity';
 import GobackButton from '../common/GobackButton';
+import BoardContact from '../board/BoardContact';
+import BoardServicePeriod from '../board/BoardServicePeriod';
 
 const MainTab = createBottomTabNavigator();
 const SearchStack = createStackNavigator();
@@ -43,6 +45,22 @@ const UserBoardStackScreen = () => {
       <UserBoardStack.Screen
         name="BoardCapacity"
         component={BoardCapacity}
+        options={{
+          title: '',
+          headerLeft: () => <GobackButton />,
+        }}
+      />
+      <UserBoardStack.Screen
+        name="BoardContact"
+        component={BoardContact}
+        options={{
+          title: '',
+          headerLeft: () => <GobackButton />,
+        }}
+      />
+      <UserBoardStack.Screen
+        name="BoardServicePeriod"
+        component={BoardServicePeriod}
         options={{
           title: '',
           headerLeft: () => <GobackButton />,
