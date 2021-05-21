@@ -10,9 +10,8 @@ const Tab = createMaterialTopTabNavigator();
 // 게시판 상단 Tab Navigation
 const BoardTabScreen = () => {
   return (
-    <Tab.Navigator
-      tabBar={props => <BoardTabBar {...props} />}
-      tabBarOptions={{ labelStyle: { fontSize: 12 } }}>
+    // tabBar 어트리뷰트에는 탭에 표시할 컴포넌트를 반환하는 함수를 설정 및 props 전달
+    <Tab.Navigator tabBar={props => <BoardTabBar {...props} />}>
       <Tab.Screen
         name="옆동네 봉사"
         component={Board1}

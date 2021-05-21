@@ -1,13 +1,4 @@
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
-import { block } from 'react-native-reanimated';
 
 import styled, { css } from 'styled-components/native';
 
@@ -47,6 +38,7 @@ const ButtonConatiner = styled.TouchableOpacity`
   border: 1px solid #c4c4c4;
   border-radius: 5px;
   padding: 10px;
+  /* 기관이라면 글쓰기 버튼 보이지 않게 설정 */
   ${props =>
     props.institution &&
     css`

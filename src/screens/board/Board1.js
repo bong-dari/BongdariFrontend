@@ -6,10 +6,12 @@ const Item = ({ item }) => {
   return (
     <View style={styles.listWrapper}>
       <View style={styles.contentsBox}>
-        <Text style={styles.contents}>닉네임</Text>
-        <Text style={styles.detail}>dongchan</Text>
+        <Text style={styles.contents}>{item.nickname}</Text>
       </View>
-      <Text style={styles.title}>{item.title}</Text>
+      {/* numberOfLines 어트리뷰는 텍스트의 줄 수를 제한하고 넘어갈 시 elipsis(...) 처리한다 */}
+      <Text style={styles.title} numberOfLines={3}>
+        {item.title}
+      </Text>
       <View style={styles.contentsBox}>
         <Text style={styles.contents}>연락처</Text>
         <Text style={styles.detail}>{item.contact}</Text>
@@ -29,8 +31,6 @@ const Item = ({ item }) => {
 };
 
 const Board1 = () => {
-  const { navigate } = useNavigation();
-
   // 보여줄 리스트 데이터
   const DATA = [
     {
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     paddingHorizontal: 25,
+    backgroundColor: '#ffffff',
   },
   description: {
     marginTop: 15,
