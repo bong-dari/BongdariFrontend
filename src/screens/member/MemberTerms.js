@@ -13,7 +13,6 @@ const MemberTerms = ({ route }) => {
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.topCircle} />
       <View style={styles.bottomCircle} />
-      <Text style={styles.appName}>Bongdari</Text>
       <View style={styles.viewContainer}>
         <Text style={styles.comment}>추가 동의가 필요합니다.</Text>
         <Text style={styles.description}>
@@ -60,16 +59,16 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     paddingHorizontal: 25,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#87a9b8',
   },
   topCircle: {
     position: 'absolute',
-    top: '15%',
+    top: '13%',
     right: '20%',
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
     backgroundColor: '#d9e1e2',
     borderRadius: 50,
     shadowColor: '#000',
@@ -79,14 +78,14 @@ const styles = StyleSheet.create({
       height: 4,
     },
     shadowRadius: 8,
-    elevation: 10,
+    elevation: 6,
   },
   bottomCircle: {
     position: 'absolute',
-    bottom: '7%',
-    left: '-3%',
-    width: 63,
-    height: 63,
+    bottom: '11%',
+    left: '-2%',
+    width: 44,
+    height: 44,
     backgroundColor: '#2de2ac',
     borderRadius: 50,
     shadowColor: '#000',
@@ -97,13 +96,6 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 8,
     elevation: 4,
-  },
-  appName: {
-    color: '#ffffff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 7,
-    alignSelf: 'flex-start',
   },
   viewContainer: {
     width: '100%',
@@ -123,13 +115,13 @@ const styles = StyleSheet.create({
   },
   comment: {
     width: 220,
-    paddingBottom: 12,
     color: '#6c6c6c',
     fontSize: 20,
     alignSelf: 'flex-start',
+    paddingBottom: 10,
     borderWidth: 1,
-    borderColor: '#ffffff',
-    borderBottomColor: '#c0c0c0',
+    borderColor: '#fff',
+    borderBottomColor: '#c4c4c4',
   },
   description: {
     marginTop: 10,

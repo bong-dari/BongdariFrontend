@@ -23,7 +23,6 @@ const MemberLogin = () => {
       <View style={styles.bottomCircle} />
       <View style={styles.viewContainer}>
         <Text style={styles.appName}>Bongdari</Text>
-        <Text style={styles.comment}>먼저 로그인이 필요해요 : &#41;</Text>
         <View style={styles.divisionContainer}>
           <View style={styles.divisionLine} />
           <Text style={styles.divisionText}>간편 로그인</Text>
@@ -52,6 +51,9 @@ const MemberLogin = () => {
             카카오로 시작하기
           </Text>
         </TouchableOpacity>
+        <Text style={styles.findCheck}>
+          봉사 기관이신가요? <Text style={styles.loginLink}>로그인</Text>
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -102,10 +104,10 @@ const styles = StyleSheet.create({
   },
   bottomCircle: {
     position: 'absolute',
-    bottom: '13%',
+    bottom: '15%',
     left: '15%',
-    width: 84,
-    height: 84,
+    width: 58,
+    height: 58,
     backgroundColor: '#ffb623',
     borderRadius: 50,
     shadowColor: '#000',
@@ -138,16 +140,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  comment: {
-    color: '#b5b5b5',
-    fontSize: 16,
-    marginTop: 34,
-  },
   divisionContainer: {
     width: '100%',
     height: 20,
     position: 'relative',
-    marginTop: 10,
+    marginTop: 60,
+    // marginBottom: 10,
     justifyContent: 'center',
   },
   divisionLine: {
@@ -192,7 +190,12 @@ const styles = StyleSheet.create({
     marginTop: 18,
     color: '#818181',
   },
+  findCheck: {
+    marginTop: 10,
+  },
   loginLink: {
+    fontSize: 14,
+    color: '#008489',
     textDecorationLine: 'underline',
   },
 });
