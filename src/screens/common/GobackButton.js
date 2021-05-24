@@ -9,10 +9,16 @@ const BackButton = styled.TouchableOpacity`
   height: 35px;
 `;
 
-const GobackButton = ({ goBack }) => {
-  console.log(goBack);
+const GobackButton = () => {
+  const { goBack } = useNavigation();
+
+  // 이전 페이지로 이동
+  const onPress = () => {
+    goBack();
+  };
+
   return (
-    <BackButton>
+    <BackButton onPress={onPress}>
       <Icon name="chevron-left" size={35} />
     </BackButton>
   );
