@@ -30,12 +30,8 @@
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.1.1",
-<<<<<<< HEAD
-    "react-native-tab-view": "^3.0.1",
     "react-native-vector-icons": "^8.1.0",
-=======
     "react-native-tab-view": "^2.16.0",
->>>>>>> b7a94f967a10d31f24c24ebc58e3e8ead56bfeda
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
