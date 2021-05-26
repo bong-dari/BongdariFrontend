@@ -32,7 +32,7 @@ const Item = ({ item }) => {
 
 const Board2 = () => {
   // 보여줄 리스트 데이터
-  const DATA = [
+  const postList = [
     {
       id: '1',
       nickname: 'youngseo',
@@ -67,7 +67,7 @@ const Board2 = () => {
       </Text>
       <View style={styles.divisionLine} />
       <FlatList
-        data={DATA}
+        data={postList}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />

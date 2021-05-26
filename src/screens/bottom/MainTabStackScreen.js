@@ -133,7 +133,13 @@ const SearchStackScreen = () => {
 const AreaStackScreen = () => {
   return (
     <AreaStack.Navigator>
-      <AreaStack.Screen name="area" component={AreaScreen} />
+      <AreaStack.Screen
+        name="area"
+        component={AreaScreen}
+        options={{
+          title: '',
+        }}
+      />
     </AreaStack.Navigator>
   );
 };
@@ -253,7 +259,8 @@ const MainTabStackScreen = () => {
   // 테스트용 상태
   const [isLogined, setIsLogined] = useState(true);
   // return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
-  return <UserBoardStackScreen />;
+  // return <UserBoardStackScreen />;
+  return <BottomTabNavigation />;
 };
 
 export default MainTabStackScreen;
