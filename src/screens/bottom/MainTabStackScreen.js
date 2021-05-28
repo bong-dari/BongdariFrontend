@@ -135,7 +135,13 @@ const SearchStackScreen = () => {
 const AreaStackScreen = () => {
   return (
     <AreaStack.Navigator>
-      <AreaStack.Screen name="area" component={AreaScreen} />
+      <AreaStack.Screen
+        name="area"
+        component={AreaScreen}
+        options={{
+          title: '',
+        }}
+      />
     </AreaStack.Navigator>
   );
 };
