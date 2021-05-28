@@ -23,6 +23,8 @@ import BoardCapacity from '../board/BoardCapacity';
 import GobackButton from '../common/GobackButton';
 import BoardContact from '../board/BoardContact';
 import BoardServicePeriod from '../board/BoardServicePeriod';
+import Test from '../board/test';
+import Test2 from '../board/test2';
 
 const MainTab = createBottomTabNavigator();
 const SearchStack = createStackNavigator();
@@ -260,7 +262,7 @@ const MainTabStackScreen = () => {
   const [isLogined, setIsLogined] = useState(true);
   // return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
   // return <UserBoardStackScreen />;
-  return <BottomTabNavigation />;
+  return <Test />;
 };
 
 export default MainTabStackScreen;
