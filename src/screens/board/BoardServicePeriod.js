@@ -1,51 +1,52 @@
 import { useNavigation } from '@react-navigation/core';
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { CommonButton } from '../../assets/globalStyles';
 import { CalendarList, LocaleConfig } from 'react-native-calendars';
-import Arrow from 'react-native-vector-icons/AntDesign';
+import moment, { weekdays } from 'moment';
+import { Button, SafeAreaView, Text, View } from 'react-native';
+import { addDays, format, getDate, startOfWeek } from 'date-fns';
 
-LocaleConfig.locales.fr = {
-  monthNames: [
-    '1월',
-    '2월',
-    '3월',
-    '4월',
-    '5월',
-    '6월',
-    '7월',
-    '8월',
-    '9월',
-    '10월',
-    '11월',
-    '12월',
-  ],
-  monthNamesShort: [
-    'Janv.',
-    'Févr.',
-    'Mars',
-    'Avril',
-    'Mai',
-    'Juin',
-    'Juil.',
-    'Août',
-    'Sept.',
-    'Oct.',
-    'Nov.',
-    'Déc.',
-  ],
-  dayNames: ['월', '화', '수', '목', '금', '토', '일'],
-  dayNamesShort: ['월', '화', '수', '목', '금', '토', '일'],
-  today: "Aujourd'hui",
-};
-LocaleConfig.defaultLocale = 'fr';
+// LocaleConfig.locales.fr = {
+//   monthNames: [
+//     '1월',
+//     '2월',
+//     '3월',
+//     '4월',
+//     '5월',
+//     '6월',
+//     '7월',
+//     '8월',
+//     '9월',
+//     '10월',
+//     '11월',
+//     '12월',
+//   ],
+//   monthNamesShort: [
+//     'Janv.',
+//     'Févr.',
+//     'Mars',
+//     'Avril',
+//     'Mai',
+//     'Juin',
+//     'Juil.',
+//     'Août',
+//     'Sept.',
+//     'Oct.',
+//     'Nov.',
+//     'Déc.',
+//   ],
+//   dayNames: ['월', '화', '수', '목', '금', '토', '일'],
+//   dayNamesShort: ['월', '화', '수', '목', '금', '토', '일'],
+//   today: "Aujourd'hui",
+// };
+// LocaleConfig.defaultLocale = 'fr';
 
 const Container = styled.SafeAreaView`
   flex: 1;
   width: 100%;
-  /* padding: 25px 20px; */
-  align-items: center;
+  padding: 25px 20px;
+  /* align-items: center; */
   justify-content: space-between;
   background-color: #fff;
 `;
@@ -56,115 +57,80 @@ const Border = styled.View`
   margin-top: 20px;
   margin-bottom: 20px;
 `;
+const Description = styled.Text`
+  font-size: 18px;
+  text-align: center;
+`;
 
 const BoardServicePeriod = () => {
+  const [week, setWeek] = useState([]);
+  const today = new Date();
   const { navigate } = useNavigation();
   const onPress = ({ type }) => {
     navigate(type);
   };
 
+  // useEffect(() => {
+  //   const weekDays = getWeekDays(date);
+  //   setWeek(weekDays);
+  // }, [date]);
+
+  // useEffect(() => {
+  //   const weekDays = getWeekDays(today);
+  //   setWeek(weekDays);
+  // }, [today]);
   return (
     <Container>
-      <Text style={{ fontSize: 18 }}>
-        봉사가 진행되는 기간을 골라 주세요&#33;
-      </Text>
+      <Description>봉사가 진행되는 기간을 골라 주세요&#33;</Description>
       <Border />
-      <CalendarList
-        markingType={'custom'}
-        markedDates={{
-          '2021-05-21': {
-            customStyles: {
-              container: {
-                // backfaceVisibility?: 'visible' | 'hidden';
-                // backgroundColor: '#0099cc',
-                // borderBottomColor?: ColorValue;
-                borderBottomEndRadius: 0,
-                borderTopEndRadius: 0,
-                borderWidth: 1,
-                borderColor: '#0099cc',
-                borderRightWidth: 0,
-                // borderBottomLeftRadius?: number;
-                // borderBottomRightRadius: 0,
-                // borderBottomStartRadius: 0,
-                // borderBottomWidth?: number;
-                // borderColor?: ColorValue;
-                // borderEndColor?: ColorValue;
-                // borderLeftColor?: ColorValue;
-                // borderLeftWidth?: number;
-                // borderRadius?: number;
-                // borderRightColor?: ColorValue;
-                // borderRightWidth?: number;
-                // borderStartColor?: ColorValue;
-                // borderStyle?: 'solid' | 'dotted' | 'dashed';
-                // borderTopColor?: ColorValue;
-                // borderTopEndRadius?: number;
-                // borderTopLeftRadius?: number;
-                // borderTopRightRadius?: number;
-                // borderTopStartRadius?: number;
-                // borderTopWidth?: number;
-                // borderWidth?: number;
-                // opacity?: number;
-                // testID?: string;,
-              },
-              text: {
-                color: '#0099cc',
-                fontWeight: 'bold',
-              },
-            },
-          },
-          '2021-05-22': {
-            customStyles: {
-              container: {
-                borderBottomEndRadius: 0,
-                borderTopEndRadius: 0,
-                borderBottomStartRadius: 0,
-                borderTopStartRadius: 0,
-                borderWidth: 1,
-                borderColor: '#0099cc',
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-              },
-              text: {
-                color: '#0099cc',
-                fontWeight: 'bold',
-              },
-            },
-          },
-          '2021-05-23': {
-            customStyles: {
-              container: {
-                backgroundColor: '#0099cc',
-              },
-              text: {
-                color: '#fff',
-                fontWeight: 'bold',
-              },
-            },
-          },
-          '2021-05-24': {
-            customStyles: {
-              container: {
-                backgroundColor: '#0099cc',
-              },
-              text: {
-                color: '#fff',
-                fontWeight: 'bold',
-              },
-            },
-          },
-          '2021-05-25': {
-            customStyles: {
-              container: {
-                backgroundColor: '#0099cc',
-              },
-              text: {
-                color: '#fff',
-                fontWeight: 'bold',
-              },
-            },
-          },
-        }}
+      {/* <CalendarList
+        markingType={'period'}
+        minDate={today}
         // Callback which gets executed when visible months change in scroll view. Default = undefined
+        // markedDates={{
+        //   // '2021-05-20': { textColor: 'green' },
+        //   '2021-05-22': {
+        //     startingDay: true,
+        //     endingDay: true,
+        //     color: '#ffb623',
+        //     // color: '#0099cc',
+        //     textColor: '#fff',
+        //   },
+        markedDates={selectDate.markedDates}
+        // '2021-05-30': {
+        //   // selected: true,
+        //   // endingDay: true,
+        //   startingDay: true,
+        //   color: '#ffa623',
+        //   // color: '#0088cc',
+        //   textColor: '#fff',
+        // },
+        // '2021-05-31': {
+        //   disabled: true,
+        //   // startingDay: true,
+        //   color: '#ffb623',
+        //   // color: '#0099cc',
+        //   textColor: '#fff',
+        //   // endingDay: true,
+        // },
+        // '2021-06-01': {
+        //   // disabled: true,
+        //   // startingDay: true,
+        //   textColor: '#fff',
+        //   color: '#ffb623',
+        //   // color: '#0099cc',
+        //   // endingDay: true,
+        // },
+        // '2021-06-02': {
+        //   // disabled: true,
+        //   // startingDay: true,
+        //   textColor: '#fff',
+        //   color: '#ffa623',
+        //   // color: '#0088cc',
+        //   endingDay: true,
+        // },
+        // }}
+        // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
         onVisibleMonthsChange={months => {
           console.log('now these months are visible', months);
         }}
@@ -178,8 +144,10 @@ const BoardServicePeriod = () => {
         showScrollIndicator={false}
         onDayPress={day => {
           console.log('day', day);
+          getSelectedDayEvenets(day.dateString);
         }}
-      />
+      /> */}
+      {/* <View>{week.formatted}</View> */}
       <CommonButton
         title="다음"
         onPress={() => onPress({ type: 'BoardContact' })}
