@@ -16,8 +16,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar barStyle={'dark-content'} />
-      {/* <MainTabStackScreen /> */}
-      <BoardTabScreen />
+      <MainTabStackScreen />
+      {/* <BoardTabScreen /> */}
     </NavigationContainer>
   );
 };
