@@ -137,6 +137,7 @@ const AreaStackScreen = () => {
     <AreaStack.Navigator>
       <AreaStack.Screen
         name="area"
+        // component={() => <AreaScreen detail />}
         component={AreaScreen}
         options={{
           title: '',
