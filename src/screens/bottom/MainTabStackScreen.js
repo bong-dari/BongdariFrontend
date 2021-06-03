@@ -261,8 +261,9 @@ const MainTabStackScreen = () => {
   // 테스트용 상태
   const [isLogined, setIsLogined] = useState(true);
   // return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
+  return <BottomTabNavigation />;
   // return <UserBoardStackScreen />;
-  return <Test />;
+  // return <Test />;
 };
 
 export default MainTabStackScreen;

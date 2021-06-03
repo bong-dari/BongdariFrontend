@@ -8,26 +8,60 @@ import {
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
+import styled, { css } from 'styled-components/native';
 
-const CityItem = ({ item }) => {
+const CityWrapper = styled.TouchableOpacity`
+  padding: 10px 30px;
+  margin-bottom: 2;
+  background-color: #f6f6f6;
+  ${props =>
+    props.isFocused &&
+    css`
+      background-color: #0099cc;
+      border-radius: 50;
+    `}
+`;
+
+const CityName = styled.Text`
+  color: #bfbfbf;
+  ${props =>
+    props.isFocused &&
+    css`
+      color: #fff;
+    `}
+`;
+
+// 도시 리스트 뷰 컴포넌트
+const CityItem = ({ item, isFocused, changeCity }) => {
+  // 도시 id
+  const { id } = item;
   return (
-    <TouchableOpacity id={item.id}>
-      <Text style={styles.city}>{item.city}</Text>
-    </TouchableOpacity>
+    <CityWrapper
+      id={id}
+      isFocused={id === isFocused ? isFocused : ''}
+      onPress={() => changeCity(id)}>
+      <CityName isFocused={item.id === isFocused ? isFocused : ''}>
+        {item.city}
+      </CityName>
+    </CityWrapper>
   );
 };
 
-const GuItem = ({ item }) => {
+//  구 리스트 뷰 컴포넌트
+const GuItem = ({ item, isFocused }) => {
+  // 구 id
+  const { id } = item;
   return (
     <>
-      {item.gu.map(test => {
-        return (
-          <View style={styles.guWrapper}>
-            <Text style={styles.gu}>{test}</Text>
-            <Icon style={styles.arrow} name="chevron-right" size={20} />
-          </View>
-        );
-      })}
+      {isFocused === id &&
+        item.gu.map(test => {
+          return (
+            <View style={styles.guWrapper}>
+              <Text style={styles.gu}>{test}</Text>
+              <Icon style={styles.arrow} name="chevron-right" size={20} />
+            </View>
+          );
+        })}
     </>
   );
 };
@@ -251,12 +285,25 @@ const AreaScreen = () => {
     },
   ];
 
-  const renderCity = ({ item }) => {
-    return <CityItem item={item} />;
+  // 선택된 도시 상태 => id로 구분
+  const [isFocused, setIsFocused] = useState(1);
+
+  // 도시 변경
+  const changeCity = id => {
+    // console.log(id);
+    setIsFocused(id);
   };
 
+  // 도시 렌더링
+  const renderCity = ({ item }) => {
+    return (
+      <CityItem item={item} isFocused={isFocused} changeCity={changeCity} />
+    );
+  };
+
+  // 구 렌더링
   const renderGu = ({ item }) => {
-    return <GuItem item={item} />;
+    return <GuItem item={item} isFocused={isFocused} />;
   };
 
   return (
@@ -284,7 +331,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingHorizontal: 25,
+    paddingHorizontal: 10,
     paddingBottom: 60,
     backgroundColor: '#fff',
   },
@@ -296,6 +343,8 @@ const styles = StyleSheet.create({
   listWrapper: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+    borderTopWidth: 1,
+    borderColor: '#c4c4c4',
   },
   cityWrapper: {
     alignItems: 'flex-start',
@@ -307,12 +356,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#c4c4c4',
     marginLeft: 20,
-  },
-  city: {
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    marginBottom: 2,
-    backgroundColor: '#f6f6f6',
   },
   gu: {
     flex: 1,
