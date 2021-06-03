@@ -9,10 +9,11 @@ import {
 import { FlatList } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import styled, { css } from 'styled-components/native';
+import { CommonButton } from '../../assets/globalStyles';
 
 const CityWrapper = styled.TouchableOpacity`
   padding: 10px 30px;
-  margin-bottom: 2;
+  margin-bottom: 2.5;
   background-color: #f6f6f6;
   ${props =>
     props.isFocused &&
@@ -66,7 +67,8 @@ const GuItem = ({ item, isFocused }) => {
   );
 };
 
-const AreaScreen = () => {
+// detail props는 게시글 등록의 상세정보 입력화면에서만 전달한다
+const AreaScreen = ({ detail }) => {
   // 도시 리스트
   const cityList = [
     { id: 1, city: '서울' },
@@ -308,7 +310,10 @@ const AreaScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>지역</Text>
+      <Text style={styles.title}>
+        {/* 게시글 등록의 상세정보 입력 화면이라면 detail props를 전달하여 텍스트를 바꿔준다 */}
+        {detail ? '봉사를 희망하는 지역을 선택해주세요!' : '지역'}
+      </Text>
       <View style={styles.listWrapper}>
         <View style={styles.cityWrapper}>
           <FlatList
@@ -323,6 +328,8 @@ const AreaScreen = () => {
           keyExtractor={item => item.id}
         />
       </View>
+      {/* 게시글 등록의 상세정보 입력 화면이라면 detail props를 전달하여 다음 버튼을 활성화 시킨다 */}
+      {detail && <CommonButton title="다음" bgColor="red" />}
     </SafeAreaView>
   );
 };
@@ -332,19 +339,25 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     paddingHorizontal: 10,
-    paddingBottom: 60,
+    paddingBottom: 20,
     backgroundColor: '#fff',
   },
   title: {
     fontSize: 16,
-    marginBottom: 25,
-    alignSelf: 'center',
+    marginBottom: 20,
+    textAlign: 'center',
+    // alignSelf: 'center',
+    width: '100%',
+    borderBottomWidth: 1,
+    borderColor: '#c4c4c4',
+    paddingBottom: 20,
   },
   listWrapper: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    borderTopWidth: 1,
+    // borderTopWidth: 1,
     borderColor: '#c4c4c4',
+    flex: 1,
   },
   cityWrapper: {
     alignItems: 'flex-start',
