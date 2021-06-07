@@ -47,7 +47,7 @@ const MemberLogin = () => {
           />
           <Text
             style={styles.socialText}
-            onPress={() => onPress({ type: 'MemberAddName' })}>
+            onPress={() => onPress({ type: 'MemberAddInfo' })}>
             카카오로 시작하기
           </Text>
         </TouchableOpacity>
