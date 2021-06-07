@@ -18,7 +18,6 @@ import InstitutionSNForm from '../institution/InstitutionSNForm';
 import MemberLogin from '../member/MemberLogin';
 import MemberAddInfo from '../member/MemberAddInfo';
 import MemberTerms from '../member/MemberTerms';
-import MemberAddName from '../member/MemberAddName';
 import BoardCapacity from '../board/BoardCapacity';
 import GobackButton from '../common/GobackButton';
 import BoardContact from '../board/BoardContact';
@@ -85,7 +84,6 @@ const UserStackScreen = () => {
         component={InstitutionLogin}
       />
       <UserTypeStack.Screen name="MemberAddInfo" component={MemberAddInfo} />
-      <UserTypeStack.Screen name="MemberAddName" component={MemberAddName} />
       <UserTypeStack.Screen name="MemberTerms" component={MemberTerms} />
       <UserTypeStack.Screen
         name="InstitutionAddressForm"
@@ -262,9 +260,9 @@ const MainTabStackScreen = () => {
   // 테스트용 상태
   const [isLogined, setIsLogined] = useState(true);
   // return <>{isLogined ? <UserStackScreen /> : <BottomTabNavigation />}</>;
-  return <BottomTabNavigation />;
+  // return <BottomTabNavigation />;
   // return <UserBoardStackScreen />;
-  // return <Test />;
+  return <Test />;
 };
 
 export default MainTabStackScreen;
